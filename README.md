@@ -29,7 +29,7 @@ http://box-look.org/content/show.php/Lethe?content=91022
 3. 安装字体
 因为在conky中用到openlogo的字体，需要
 	
-		cp openlogos.ttf /usr/share/fonts/TTF/
+		cp ownfiles/openlogos.ttf /usr/share/fonts/TTF/
 		cd /usr/share/fonts/TTF/
 		mkfontdir
 		mkfontscale
