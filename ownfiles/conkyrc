@@ -1,0 +1,73 @@
+background no
+override_utf8_locale yes
+font WenQuanYi Micro Hei Mono:size=9
+xftfont WenQuanYi Micro Hei Mono:size=9
+use_xft yes
+xftalpha 0.1
+
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type override #desktop,normal,override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+minimum_size 300 5
+maximum_width 300
+
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+gap_x 60
+gap_y 60
+
+no_buffers yes
+cpu_avg_samples 2
+uppercase no
+use_spacer none
+out_to_console no
+
+default_color white
+default_shade_color black
+default_outline_color grey90
+
+TEXT
+#${color yellow}${exec date +"%F %T %a"}${color}
+${font openlogos:size=48}${color #1994d1}B${font}${color}${voffset -48}
+          Uptime:  ${alignr}${color #0077ff} $uptime${color}
+          CPU:     ${alignr}${color #0077ff} ${cpu}%${color}
+          Load:    ${alignr}${color #0077ff} ${loadavg}${color}
+
+${color green}[Memory Usage]${color}
+   Memory:${alignr}${color #0077ff}  ${mem}/${memmax} ${memperc}%${color}
+   Swap:${alignr}${color #0077ff}  ${swap}/${swapmax} ${swapperc}%${color}
+
+${color green}[Disk Usage]${color}
+   /dev/sda1   /     ${alignr}${color gray}${fs_bar 10,100 /}${color}
+   /dev/sda3   /home ${alignr}${color gray}${fs_bar 10,100 /home}${color}
+
+#Battery:${color #0077ff} ${battery BAT1} ${battery_time BAT1} $color
+#Battery Life:${color #cc2222} $apm_battery_time - $apm_battery_life $color
+
+${color green}[CPU Top 3]${color}
+   Process${alignr} PID   CPU%   MEM%  MEM
+   ${color #0077ff}${top name 1}${alignr}${top pid 1} ${top cpu 1} ${top mem 1}  ${top mem_res 1}
+   ${color #0077ff}${top name 2}${alignr}${top pid 2} ${top cpu 2} ${top mem 2}  ${top mem_res 2}
+   ${color #0077ff}${top name 3}${alignr}${top pid 3} ${top cpu 3} ${top mem 3}  ${top mem_res 3}
+
+${color green}[Memory Top 3]${color}
+   Process${alignr} PID   CPU%   MEM%  MEM
+   ${color #0077ff}${top_mem name 1}${alignr}${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}  ${top_mem mem_res 1}
+   ${color #0077ff}${top_mem name 2}${alignr}${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}  ${top_mem mem_res 2}
+   ${color #0077ff}${top_mem name 3}${alignr}${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}  ${top_mem mem_res 3}
+
+${color #000000}${cpugraph 00ff00 aa0000 -t}${color}
+${alignc}CPU Status
+${color #000000}${diskiograph 00ff00 aa0000 -t}${color}
+${alignc}Disk I/O Status
