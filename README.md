@@ -18,21 +18,21 @@ http://box-look.org/content/show.php/Lethe?content=91022
 1. 把文件全部下载到~/.fvwm目录中
 2. .xinitrc中设置XIM环境变量和启动fvwm
 
-	export XMODIFIERS=@im=fcitx
-	export XIM=fcitx
-	export GTK_IM_MODULE=fcitx
-	export QT_IM_MODULE=fcitx
-	export XMODIFIERS=@im=fcitx
-	export XIM_PROGRAM=fcitx
-	exec fvwm
+		export XMODIFIERS=@im=fcitx
+		export XIM=fcitx
+		export GTK_IM_MODULE=fcitx
+		export QT_IM_MODULE=fcitx
+		export XMODIFIERS=@im=fcitx
+		export XIM_PROGRAM=fcitx
+		exec fvwm
 
 3. 安装字体
 因为在conky中用到openlogo的字体，需要
 	
-	cp openlogos.ttf /usr/share/fonts/TTF/
-	cd /usr/share/fonts/TTF/
-	mkfontdir
-	mkfontscale
+		cp openlogos.ttf /usr/share/fonts/TTF/
+		cd /usr/share/fonts/TTF/
+		mkfontdir
+		mkfontscale
 
 ### 快捷键
 1. Alt + t 打开roxterm
